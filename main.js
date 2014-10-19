@@ -18,10 +18,14 @@ $(function(){
 			$("#survey").append("<div class=\"questionBlock\">");
 			$("#survey").append("<span class=\"question\">" + questions[i].question + "</span>");
 			if(questions[i].type == "normal") {
-				//append all the answer choices with the values matching the labels
+				totalHipsterScore = totalHipsterScore + //answer
 			} else if(questions[i].type == "anti") {
-				//append all the answer choices except with the values inversed of the labels
-			} //add else if the question type is the yes/no thing
+				//use the questionBlock_inversed
+				totalHipsterScore = totalHipsterScore + //answer
+			} else if(questions[i].type == 'yesNo'){
+				//use the questionBlock_yn
+				totalHipsterScore = totalHipsterScore + //answer
+			}
 		}
 	}
 
