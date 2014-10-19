@@ -1,6 +1,7 @@
 var totalHipsterScore = 0;
 var hipsterIndex = 0;
 var totalImportantQuestions = 0;
+var songs = [];
 
 //Genre scale for each level of hipster
 var genres = ["pop", "indie pop", "indie rock", "folk", "hipster"];
@@ -67,16 +68,19 @@ $(function(){
 })
 
 function calculateAndDoHipster() {
-	calculateHipsterIndex();
-	getHipsterMusic();
 	$("#loading").css("display","block");
 	$("#survey").css("display","none");
+	calculateHipsterIndex();
+	getHipsterMusic();
 	setTimeout(playHipsterMusic(), 5000);
 }
 
 function playHipsterMusic() {
 	$("#content").css("display","block");
-	$("#loading").css("display","none");	
+	$("#loading").css("display","none");
+	for(i = 0; i < songs.length; i++) {
+		$("#content").append("<p>" + songs[i].artist_name + "'s " + songs[i].title + "</p>");
+	}
 }
 
 function calculateHipsterIndex() {
@@ -120,12 +124,14 @@ function getHipsterMusic() {
   data: {
   	'api_key': 'KL8LOBUKZKX4SDIXK',
   	'results': '3',
-  	'style': genre
+  	'style': genre,
+  	'sort': 'artist_familiarity-asc'
   },
   dataType: 'json',
   success: function (resp) {
   	console.log("successful"),
-  	alert("You should listen to " + resp.response.songs[0].artist_name)
+  	songs = resp.response.songs;
+  	playHipsterMusic();
   }
 });
 }
