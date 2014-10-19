@@ -1,2 +1,16 @@
 var questions = [];
-questions[0] {type:"normal", question:"enter question"};
+questions[0] = {type:"normal", question:"Considering the temperature is colder than usual, how likely are you to wear a scarf?"};
+questions[1] = {type:"anti", question:"How much are you craving Starbucks at the moment?"};
+questions[2] = {type:"normal", question:"How likely are you to move to Portland,Oregon?"};
+questions[3] = {type:"control", question:"How satisfied are you with our government?"};
+questions[4] = {type:"normal", question:"How likely are you to wear skinny jeans?"};
+questions[5] = {type:"anti", question:"How likely are you to do things before they are cool?"};
+questions[6] = {type:"normal", question:"How big are your ideal glasses?"};
+questions[7] = {type:"anti", question:"How hipster are you?"};
+questions[8] = {type:"control", question:"How good are you at arithmetic?"};
+questions[9] = {type:"control", question:"How great is Coca-Cola?"};
+questions[10] = {type:"normal", question:"How likely are you to meditate in the morning?"};
+questions[11] = {type:"control", question:"How likely are you to walk around barefoot?"};
+questions[12] = {type:"control", question:"How important is science in your life?"};
+questions[13] = {type:"yesNo", question:"Do you wait for your coffee to cool down before you sip it?"};
+questions[14] = {type:"control", question:"How likely are you to take care of your hygiene?"};
