@@ -21,7 +21,7 @@ $(function(){
 			$("#survey").append("<div class=\"questionBlock\">");
 			$("#survey").append("<span class=\"question\">" + questions[i].question + "</span><ul>");
 			if(questions[i].type == "normal" || questions[i].type == "anti2" || questions[i].type == "control3") {
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" id=\"" + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">Not At All</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" id=\"" + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">Nah Son</label></li>");
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">Not Very Likely</label></li>");
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">50/50</label></li>");
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">ummmm Pretty Likely</label></li>");
