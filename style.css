@@ -43,6 +43,11 @@ img.logo {
     transition: all .5s;
 }
 
+.button a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .button:hover {
 	background: rgb(74, 83, 98);
 }
@@ -65,4 +70,14 @@ img.logo {
     height: 100px;
 	margin: 25px 25px 0;
 	max-width: 100%;
+}
+
+span.question {
+    font-size: 30px;
+    display: block;
+}
+
+h1 {
+    font-family: 'Bevan', cursive;
+    font-weight: normal;
 }
