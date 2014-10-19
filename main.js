@@ -79,7 +79,7 @@ function playHipsterMusic() {
 	$("#content").css("display","block");
 	$("#loading").css("display","none");
 	for(i = 0; i < songs.length; i++) {
-		$("#content").append("<p>" + songs[i].artist_name + "'s " + songs[i].title + "</p>");
+		$("#content").append("<p><strong>" + songs[i].title + "</strong> - " + songs[i].artist_name + "</p>");
 	}
 }
 
@@ -125,7 +125,7 @@ function getHipsterMusic() {
   	'api_key': 'KL8LOBUKZKX4SDIXK',
   	'results': '3',
   	'style': genre,
-  	'sort': 'artist_familiarity-asc'
+  	'sort': 'song_hotttnesss-asc'
   },
   dataType: 'json',
   success: function (resp) {
