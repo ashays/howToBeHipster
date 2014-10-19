@@ -81,3 +81,21 @@ h1 {
     font-family: 'Bevan', cursive;
     font-weight: normal;
 }
+
+.loading {
+    background: #fff;
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.loading img {
+    margin: 30% auto 50px;
+    display: block;
+}
+
+.loading span {
+    text-transform: capitalize;
+}

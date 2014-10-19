@@ -69,6 +69,14 @@ $(function(){
 function calculateAndDoHipster() {
 	calculateHipsterIndex();
 	getHipsterMusic();
+	$("#loading").css("display","block");
+	$("#survey").css("display","none");
+	setTimeout(playHipsterMusic(), 5000);
+}
+
+function playHipsterMusic() {
+	$("#content").css("display","block");
+	$("#loading").css("display","none");	
 }
 
 function calculateHipsterIndex() {
@@ -80,7 +88,7 @@ function calculateHipsterIndex() {
 }
 
 function getHipsterMusic() {
-	var genres = genreCodes[hipsterIndex - 1];
+	var genre = genres[hipsterIndex - 1];
 
 // var xhr = new XMLHttpRequest();
 // xhr.open("POST", "https://private-anon-d150c1785-mdlrs.apiary-mock.com/authentication/login");
@@ -92,33 +100,32 @@ function getHipsterMusic() {
 // xhr.send("Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryp7MA4YWxkTrZu0gW\n----WebKitFormBoundaryE19zNvXGzXaLvS5C\nContent-Disposition: form-data; name=\"username\"\nfvirani6@gatech.edu\n----WebKitFormBoundaryE19zNvXGzXaLvS5C\nContent-Disposition: form-data; name=\"password\"\nfv0404\n----WebKitFormBoundaryE19zNvXGzXaLvS5C");	
 
 	//Authentication
-	$.ajax({
-	  type: "POST",
-	  url: "http://api.musicdealers.com/authentication/login",
-	  data: { username: "faizan.virani.44@gmail.com", password: "fv0404" },
-	  success: function(resp) {
-	  	console.log("music dealers success")
-	  	$.ajax({
-	  		type: "POST",
-	  		url: "http://api.musicdealers.com/songs/{1,1}",
-	  		data: genres,
-		});
-	  }
-	});
+		// $.ajax({
+		//   type: "POST",
+		//   url: "http://api.musicdealers.com/authentication/login",
+		//   data: { username: "faizan.virani.44@gmail.com", password: "fv0404" },
+		//   success: function(resp) {
+		//   	console.log("music dealers success")
+		//   	$.ajax({
+		//   		type: "POST",
+		//   		url: "http://api.musicdealers.com/songs/{1,1}",
+		//   		data: genres,
+		// 	});
+		//   }
+		// });
 
 
 	$.ajax({
   url: "http://developer.echonest.com/api/v4/song/search",
   data: {
   	'api_key': 'KL8LOBUKZKX4SDIXK',
-  	'results': '1',
-  	'style': genres[hipsterIndex],
-  	'bucket': 'tracks'
+  	'results': '3',
+  	'style': genre
   },
   dataType: 'json',
   success: function (resp) {
   	console.log("successful"),
-  	console.log(resp.response.songs[0].artist_name)
+  	alert("You should listen to " + resp.response.songs[0].artist_name)
   }
 });
 }
