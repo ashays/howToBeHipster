@@ -1,6 +1,6 @@
 var totalHipsterScore = 0;
 var hipsterIndex = 0;
-var totalImportantQuestions = 0;
+var totalImportantQuestions = questions.length;
 var songs = [];
 
 //Genre scale for each level of hipster
@@ -13,8 +13,8 @@ $(function(){
 	function setUpSurvey() {
 		var HTMLinputStart = "<li><input type=\"radio\" name=\"";
 		for(i = 0; i < questions.length; i++) {
-			if(questions[i].type != "control") {
-				totalImportantQuestions++;
+			if(questions[i].type == "control1" || questions[i].type == "control2" || questions[i].type == "control3") {
+				totalImportantQuestions--;
 			}
 			//Add question to HTML form
 			var HTMLnameFor = "question" + i;
@@ -124,7 +124,10 @@ function getHipsterMusic() {
   	'api_key': 'KL8LOBUKZKX4SDIXK',
   	'results': '7',
   	'style': genre,
-  	'sort': 'song_hotttnesss-asc'
+  	'sort': 'song_hotttnesss-asc',
+  	// 'bucket': 'id:7digital-US',
+  	// 'bucket': 'audio_summary',
+  	// 'bucket': 'tracks'
   },
   dataType: 'json',
   success: function (resp) {
