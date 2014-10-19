@@ -13,7 +13,7 @@ $(function(){
 	function setUpSurvey() {
 		var HTMLinputStart = "<li><input type=\"radio\" name=\"";
 		for(i = 0; i < questions.length; i++) {
-			if(questions[i].type != "control1" || questions[i].type != "control2" || questions[i].type != "control3" ) {
+			if(questions[i].type != "control") {
 				totalImportantQuestions++;
 			}
 			//Add question to HTML form
