@@ -72,12 +72,11 @@ function calculateAndDoHipster() {
 	$("#survey").css("display","none");
 	calculateHipsterIndex();
 	getHipsterMusic();
-	setTimeout(playHipsterMusic(), 5000);
 }
 
 function playHipsterMusic() {
-	$("#content").css("display","block");
-	$("#loading").css("display","none");
+	$("#loading").addClass( "loader");
+	$("#content").append("<p>You received a Hipster Index of <strong>" + hipsterIndex +  "</strong>.</p>");
 	for(i = 0; i < songs.length; i++) {
 		$("#content").append("<p><strong>" + songs[i].title + "</strong> - " + songs[i].artist_name + "</p>");
 	}
@@ -123,7 +122,7 @@ function getHipsterMusic() {
   url: "http://developer.echonest.com/api/v4/song/search",
   data: {
   	'api_key': 'KL8LOBUKZKX4SDIXK',
-  	'results': '3',
+  	'results': '7',
   	'style': genre,
   	'sort': 'song_hotttnesss-asc'
   },
