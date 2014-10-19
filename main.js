@@ -13,18 +13,26 @@ $(function(){
 		for(i = 0; i < questions.length; i++) {
 			if(questions[i].type != "control") {
 				totalImportantQuestions++;
+				;
 			}
 			//Add question to HTML form
 			$("#survey").append("<div class=\"questionBlock\">");
 			$("#survey").append("<span class=\"question\">" + questions[i].question + "</span>");
 			if(questions[i].type == "normal") {
-				totalHipsterScore = totalHipsterScore + //answer
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"1\">1<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"2\">2<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"3\">3<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"4\">4<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"5\">5<br />");
 			} else if(questions[i].type == "anti") {
-				//use the questionBlock_inversed
-				totalHipsterScore = totalHipsterScore + //answer
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"5\">1<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"4\">2<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"3\">3<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"2\">4<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"1\">5<br />");
 			} else if(questions[i].type == 'yesNo'){
-				//use the questionBlock_yn
-				totalHipsterScore = totalHipsterScore + //answer
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"5\">Yes<br />");
+				$("#survey").append("<input type=\"radio\" name=\"question" + i + "\ value=\"1\">No<br />");
 			}
 		}
 	}
