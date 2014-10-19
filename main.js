@@ -19,22 +19,40 @@ $(function(){
 			var HTMLnameFor = "question" + i;
 			$("#survey").append("<div class=\"questionBlock\">");
 			$("#survey").append("<span class=\"question\">" + questions[i].question + "</span><ul>");
-			if(questions[i].type == "normal") {
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" id=\"" + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">1</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">2</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">3</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">4</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">5</label></li>");
-			} else if(questions[i].type == "anti") {
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">1</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">2</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">3</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">4</label></li>");
-				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">5</label></li>");
-			} else if(questions[i].type == 'yesNo'){
+			if(questions[i].type == "normal" || questions[i].type == "anti2" || questions[i].type == "control3") {
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" id=\"" + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">Not At All</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">Not Very Likely</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">50/50</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">ummmm Pretty Likely</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">Do You Even Have To Ask?</label></li>");
+			} else if(questions[i].type == "anti1") {
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">I'm not a Hipster</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">Is that the same thing as a Hippie?</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">I shopped at Hot Topic before it was hot... I mean cool</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">I eat the occassioinal kale salad</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">100% Genuine Hipster</label></li>");
+			} else if(questions[i].type == "anti3") {
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">Ew</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">I don't drink coffee</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">I would love a frappacino right now!</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">Craving it pretty badly</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">Already halfway done with my double shot espresso... BLACK!</label></li>");
+			} else if(questions[i].type == "normal1") {
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">Miniscule</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"2\"><label for=\"" + HTMLnameFor + "\">Small</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"3\"><label for=\"" + HTMLnameFor + "\">Decently Sized</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"4\"><label for=\"" + HTMLnameFor + "\">Large</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">My glasses aren't large you just don't get it</label></li>"); 
+			}else if(questions[i].type == 'yesNo'){
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"5\"><label for=\"" + HTMLnameFor + "\">Yes</label></li>");
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"1\"><label for=\"" + HTMLnameFor + "\">No</label></li>");
-			} else if(questions[i].type == 'control'){
+			} else if(questions[i].type == 'control1'){
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">Not great at all</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">Meh</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">Okay</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">Great</label></li>");
+				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">As great as food places that don't dare to ask \"Is Pepsi Okay?\"</label></li>");
+			} else if(questions[i].type == 'control2'){
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">1</label></li>");
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">2</label></li>");
 				$("#survey").append(HTMLinputStart + HTMLnameFor + "\" value=\"0\"><label for=\"" + HTMLnameFor + "\">3</label></li>");
